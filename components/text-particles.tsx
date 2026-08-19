@@ -32,11 +32,11 @@ function lerp(a: number, b: number, t: number) {
 }
 
 function colorFor(xNorm: number, seed: number) {
-  const navy = [36, 50, 102]
-  const teal = [32, 132, 142]
-  if (seed > 6.05) return [196, 108, 72]
-  const t = Math.min(1, Math.max(0, xNorm * 0.55 + (seed % 1) * 0.12))
-  return [lerp(navy[0], teal[0], t), lerp(navy[1], teal[1], t), lerp(navy[2], teal[2], t)]
+  const navy = [18, 26, 58]
+  const ink = [12, 18, 42]
+  if (seed > 6.15) return [148, 72, 42]
+  const t = Math.min(1, Math.max(0, xNorm * 0.28 + (seed % 1) * 0.08))
+  return [lerp(ink[0], navy[0], t), lerp(ink[1], navy[1], t), lerp(ink[2], navy[2], t)]
 }
 
 function sampleText(lines: string[], width: number, height: number, fontFamily: string) {
@@ -94,7 +94,7 @@ function sampleText(lines: string[], width: number, height: number, fontFamily: 
           r,
           g,
           b,
-          size: cell * (0.92 + Math.random() * 0.18),
+          size: cell * (1.08 + Math.random() * 0.16),
           seed,
         })
       }
@@ -287,7 +287,7 @@ export function TextParticles() {
 
   return (
     <div ref={wrap} className="font-display relative h-full w-full">
-      <canvas ref={canvasRef} className="h-full w-full cursor-pointer blur-[1.6px]" aria-hidden="true" />
+      <canvas ref={canvasRef} className="h-full w-full cursor-pointer blur-[0.8px]" aria-hidden="true" />
     </div>
   )
 }
