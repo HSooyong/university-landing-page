@@ -217,7 +217,9 @@ export function FacultySection() {
         <div className="max-w-2xl">
           <p className="section-kicker">Faculty</p>
           <h2 className="font-display mt-3 text-4xl leading-[1.2] text-foreground md:text-5xl">
-            실용음악학전공
+            현장을 아는 교수진이
+            <br />
+            당신의 꿈을 설계합니다
           </h2>
         </div>
 
