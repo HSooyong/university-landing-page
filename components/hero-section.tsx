@@ -8,7 +8,7 @@ export function HeroSection() {
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-4 px-5 pt-28 pb-16 md:grid-cols-[1.05fr_0.95fr] md:gap-8 md:px-8">
         <div className="relative z-10 max-w-3xl">
           <BrandMark className="text-2xl md:text-3xl" />
-          <p className="font-label mt-8 text-xs text-primary">2027 Admissions</p>
+          <p className="font-label mt-8 text-xs text-primary">2027 모집요강</p>
           <h1 className="font-display mt-4 text-[2.7rem] leading-[1.16] text-foreground sm:text-6xl md:text-7xl">
             소리의 미래,
             <br />
@@ -27,7 +27,7 @@ export function HeroSection() {
               href="#works"
               className="inline-flex items-center justify-center gap-2 border border-foreground/25 bg-transparent px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/5"
             >
-              Works
+              작품
             </a>
           </div>
         </div>

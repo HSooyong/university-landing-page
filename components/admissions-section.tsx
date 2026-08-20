@@ -5,7 +5,7 @@ export function AdmissionsSection() {
     <section id="admissions" className="relative border-t border-foreground/10 py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="max-w-2xl">
-          <p className="section-kicker">Admissions</p>
+          <p className="section-kicker">모집요강</p>
           <h2 className="font-display mt-3 text-3xl leading-[1.2] text-foreground md:text-5xl">
             2027학년도 수시 모집요강
           </h2>

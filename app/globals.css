@@ -114,8 +114,7 @@
   font-family: var(--font-label);
   font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: var(--primary);
 }
 

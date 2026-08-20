@@ -6,12 +6,12 @@ import { cn } from "@/lib/utils"
 import { BrandMark } from "@/components/brand-mark"
 
 const links = [
-  { label: "About", href: "#intro" },
-  { label: "Path", href: "#path" },
-  { label: "Works", href: "#works" },
-  { label: "Faculty", href: "#faculty" },
-  { label: "Admissions", href: "#admissions" },
-  { label: "Contact", href: "#apply" },
+  { label: "소개", href: "#intro" },
+  { label: "과정", href: "#path" },
+  { label: "작품", href: "#works" },
+  { label: "교수진", href: "#faculty" },
+  { label: "모집요강", href: "#admissions" },
+  { label: "문의", href: "#apply" },
 ]
 
 function NavLink({ href, label, onClick }: { href: string; label: string; onClick?: () => void }) {

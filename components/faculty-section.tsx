@@ -215,7 +215,7 @@ export function FacultySection() {
     <section id="faculty" className="relative border-t border-foreground/10 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="max-w-2xl">
-          <p className="section-kicker">Faculty</p>
+          <p className="section-kicker">교수진</p>
           <h2 className="font-display mt-3 text-4xl leading-[1.2] text-foreground md:text-5xl">
             현장을 아는 교수진이
             <br />
@@ -339,7 +339,7 @@ export function FacultySection() {
                 <Mail className="size-4 text-primary" />
                 <span className="text-sm font-medium text-foreground">{active.email}</span>
               </span>
-              <span className="font-label text-[10px] tracking-[0.16em] text-muted-foreground uppercase">Contact</span>
+              <span className="font-label text-[10px] tracking-[0.16em] text-muted-foreground">문의</span>
             </a>
           </div>
         </div>

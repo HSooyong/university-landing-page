@@ -176,7 +176,7 @@ export function PathSection() {
     <section id="path" className="relative overflow-x-hidden bg-[#0c1424]">
       <div className="mx-auto max-w-6xl px-5 pt-24 pb-8 text-center md:px-8 md:pt-32">
         <div ref={head.ref} className={cn("spectrum-head", head.shown && "is-in")}>
-          <p className="font-label text-xs tracking-[0.28em] text-[#e0b15a]">Path</p>
+          <p className="font-label text-xs tracking-[0.14em] text-[#e0b15a]">과정</p>
           <h2 className="font-display mt-4 text-3xl leading-[1.25] text-white md:text-5xl">
             배우게 되는 것,
             <br />

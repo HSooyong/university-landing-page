@@ -47,7 +47,7 @@ export function WorksSection() {
   return (
     <section id="works" className="border-t border-foreground/10 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <p className="section-kicker">Works</p>
+        <p className="section-kicker">작품</p>
           <h2 className="font-display mt-3 text-4xl leading-[1.2] text-foreground md:text-5xl">
             이미 현장에서
             <br />

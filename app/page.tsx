@@ -16,7 +16,7 @@ export default function Page() {
 
       <section id="intro" className="border-t border-foreground/10 py-24 md:py-32">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <p className="section-kicker">About</p>
+          <p className="section-kicker">소개</p>
           <h2 className="sr-only">
             수도권 유일 국립 4년제 실용음악학전공. 보컬, 싱어송라이터, EDM 프로듀서, Beat Maker, 연주 세션, 스튜디오
             엔지니어. 당신을 알리는 소리를 배웁니다.
