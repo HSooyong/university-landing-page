@@ -7,8 +7,8 @@ import { BrandMark } from "@/components/brand-mark"
 
 const links = [
   { label: "소개", href: "#intro" },
-  { label: "과정", href: "#path" },
-  { label: "작품", href: "#works" },
+  { label: "교육과정", href: "#path" },
+  { label: "주요 성과", href: "#works" },
   { label: "교수진", href: "#faculty" },
   { label: "모집요강", href: "#admissions" },
   { label: "문의", href: "#apply" },
@@ -19,7 +19,7 @@ function NavLink({ href, label, onClick }: { href: string; label: string; onClic
     <a
       href={href}
       onClick={onClick}
-      className="font-label relative block h-[22px] overflow-hidden text-[15px] font-semibold text-foreground"
+      className="relative block h-6 overflow-hidden text-base font-semibold text-foreground"
     >
       <span className="block transition-transform duration-500 ease-[cubic-bezier(.25,.74,.22,.99)] group-hover/nav:-translate-y-full">
         {label}
@@ -49,10 +49,10 @@ export function SiteNav() {
         scrolled ? "border-b border-foreground/15 bg-background/80 backdrop-blur-md" : "border-b border-transparent",
       )}
     >
-      <nav className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 md:px-8">
+      <nav className="mx-auto flex h-[5.5rem] max-w-6xl items-center justify-between px-5 md:h-24 md:px-8">
         <a href="#" className="flex items-center gap-3">
           <BrandMark />
-          <span className="hidden text-sm font-medium text-foreground sm:inline">실용음악학전공</span>
+          <span className="hidden text-lg font-semibold text-foreground sm:inline">실용음악학전공</span>
         </a>
 
         <div className="hidden items-center gap-10 md:flex">
@@ -82,7 +82,7 @@ export function SiteNav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="font-label border-b border-foreground/10 py-4 text-xl font-semibold text-foreground"
+                className="border-b border-foreground/10 py-4 text-xl font-semibold text-foreground"
               >
                 {l.label}
               </a>

@@ -242,20 +242,20 @@ export function FacultySection() {
                 </div>
               </div>
               <div className="relative pt-4 pr-10">
-                <p className="font-label text-[11px] tracking-[0.18em] text-primary uppercase">{f.role}</p>
+                <p className="text-sm font-semibold text-primary">{f.role}</p>
                 <h3 className="mt-1 text-xl font-bold text-foreground">{f.name}</h3>
                 <div className="mt-3 flex items-stretch gap-3">
                   <span className="w-px bg-primary/50" aria-hidden />
                   <div>
-                    <p className="font-label text-[10px] tracking-[0.22em] text-primary uppercase">{f.focusEn}</p>
-                    <p className="mt-0.5 text-[15px] font-semibold tracking-tight text-foreground">{f.focusKo}</p>
-                    <p className="mt-0.5 font-label text-[10px] tracking-[0.16em] text-muted-foreground uppercase">
+                    <p className="font-label text-[11px] tracking-[0.16em] text-primary uppercase">{f.focusEn}</p>
+                    <p className="mt-0.5 text-base font-semibold tracking-tight text-foreground">{f.focusKo}</p>
+                    <p className="mt-0.5 font-label text-[11px] tracking-[0.14em] text-muted-foreground uppercase">
                       Professor
                     </p>
                   </div>
                 </div>
                 <span
-                  className="font-label absolute right-0 bottom-0 text-[9px] tracking-[0.28em] text-primary/55 uppercase transition-colors duration-200 group-hover:text-primary"
+                  className="font-label absolute right-0 bottom-0 text-[10px] tracking-[0.2em] text-primary/55 uppercase transition-colors duration-200 group-hover:text-primary"
                   aria-hidden="true"
                 >
                   Click
@@ -292,20 +292,20 @@ export function FacultySection() {
                 <img src={active.image} alt="" className="h-full min-h-[14rem] w-full object-cover object-center" />
               </div>
               <div className="px-6 py-6 pr-14 sm:px-8">
-                <p className="font-label text-[11px] tracking-[0.18em] text-primary uppercase">{active.role}</p>
+                <p className="text-sm font-semibold text-primary">{active.role}</p>
                 <h3 id="faculty-modal-title" className="font-display mt-2 text-3xl text-foreground">
                   {active.name}
                 </h3>
                 <div className="mt-4 inline-flex items-center gap-3 border border-primary/20 bg-primary/5 px-3 py-2">
-                  <span className="font-label text-[10px] tracking-[0.2em] text-primary uppercase">{active.focusEn}</span>
+                  <span className="font-label text-[11px] tracking-[0.16em] text-primary uppercase">{active.focusEn}</span>
                   <span className="h-3 w-px bg-primary/30" aria-hidden />
-                  <span className="text-sm font-semibold text-foreground">{active.focusKo}</span>
+                  <span className="text-base font-semibold text-foreground">{active.focusKo}</span>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {active.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="border border-primary/25 bg-primary/5 px-2.5 py-1 font-label text-[10px] tracking-[0.14em] text-primary uppercase"
+                      className="border border-primary/25 bg-primary/5 px-2.5 py-1 font-label text-[11px] tracking-[0.12em] text-primary uppercase"
                     >
                       {tag}
                     </span>
@@ -318,10 +318,10 @@ export function FacultySection() {
               <div className="grid gap-8 sm:grid-cols-2">
                 {active.blocks.map((block) => (
                   <div key={block.title}>
-                    <p className="font-label text-[10px] tracking-[0.2em] text-primary uppercase">{block.title}</p>
+                    <p className="text-sm font-bold text-primary">{block.title}</p>
                     <ul className="mt-3 space-y-2.5">
                       {block.items.map((item) => (
-                        <li key={item} className="border-l border-primary/25 pl-3 text-[13px] leading-relaxed text-foreground/90">
+                        <li key={item} className="border-l border-primary/25 pl-3 text-[15px] leading-relaxed text-foreground/90">
                           {item}
                         </li>
                       ))}
@@ -337,9 +337,9 @@ export function FacultySection() {
             >
               <span className="flex items-center gap-2.5">
                 <Mail className="size-4 text-primary" />
-                <span className="text-sm font-medium text-foreground">{active.email}</span>
+                <span className="text-base font-medium text-foreground">{active.email}</span>
               </span>
-              <span className="font-label text-[10px] tracking-[0.16em] text-muted-foreground">문의</span>
+              <span className="text-sm font-semibold text-muted-foreground">문의</span>
             </a>
           </div>
         </div>

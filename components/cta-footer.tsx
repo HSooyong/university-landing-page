@@ -54,14 +54,14 @@ export function CtaFooter() {
               href="https://ipsi.hknu.ac.kr"
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center justify-center gap-2 bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              className="group inline-flex items-center justify-center gap-2 bg-primary px-7 py-4 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
               원서 접수하기
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
             <a
               href="tel:031-610-4840"
-              className="inline-flex items-center justify-center gap-2 border border-foreground/25 px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/5"
+              className="inline-flex items-center justify-center gap-2 border border-foreground/25 px-7 py-4 text-base font-semibold text-foreground transition-colors hover:bg-foreground/5"
             >
               입학 상담 031-610-4840
             </a>
@@ -73,14 +73,14 @@ export function CtaFooter() {
         <div className="mx-auto max-w-6xl px-5 py-14 md:px-8">
           <div className="flex items-center gap-2.5">
             <BrandMark />
-            <span className="text-sm font-medium text-foreground">실용음악학전공</span>
+            <span className="text-base font-semibold text-foreground">실용음악학전공</span>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
             디자인예술스포츠학부 실용음악학전공
             <br />
             평택캠퍼스 창의관 417호
           </p>
-          <p className="mt-3 space-y-0.5 text-sm text-muted-foreground">
+          <p className="mt-3 space-y-0.5 text-base text-muted-foreground">
             <span className="block">
               <span className="text-foreground/70">TEL</span> 031-610-4840
             </span>
@@ -96,7 +96,7 @@ export function CtaFooter() {
                 href={href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 border border-foreground/15 px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:border-foreground/40 hover:text-foreground"
+                className="inline-flex items-center gap-2 border border-foreground/15 px-3.5 py-2 text-base text-foreground/80 transition-colors hover:border-foreground/40 hover:text-foreground"
               >
                 <Icon className="size-4" />
                 {label}
@@ -105,10 +105,10 @@ export function CtaFooter() {
           </div>
 
           <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               © 2026 Hankyong National University · Applied Music. All rights reserved.
             </p>
-            <p className="text-xs text-muted-foreground">입학 문의 · 031-610-4840</p>
+            <p className="text-sm text-muted-foreground">입학 문의 · 031-610-4840</p>
           </div>
         </div>
       </footer>

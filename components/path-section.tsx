@@ -127,26 +127,26 @@ function SpectrumRow({ row }: { row: PathRow }) {
             shown && "is-in",
           )}
         >
-          <p className="font-label text-[11px] tracking-[0.22em] text-[#e0b15a] uppercase">{row.kicker}</p>
-          <h3 className="font-label mt-3 text-[1.65rem] leading-[1.12] font-bold tracking-[0.04em] text-[#e0b15a] uppercase md:text-[1.9rem]">
+          <p className="font-label text-xs tracking-[0.16em] text-[#e0b15a] uppercase">{row.kicker}</p>
+          <h3 className="font-label mt-3 text-[1.8rem] leading-[1.15] font-bold tracking-[0.03em] text-[#e0b15a] uppercase md:text-[2rem]">
             {row.title}
             {row.titleLine2 ? (
               <>
                 <br />
-                <span className="text-[1.05rem] tracking-[0.08em] normal-case">{row.titleLine2}</span>
+                <span className="font-sans text-[1.15rem] font-bold tracking-tight normal-case">{row.titleLine2}</span>
               </>
             ) : null}
           </h3>
           <p
             className={cn(
-              "mt-4 whitespace-pre-line text-[15px] leading-relaxed text-white/85 md:max-w-sm",
+              "mt-4 whitespace-pre-line text-base leading-relaxed text-white/90 md:max-w-sm",
               row.flip && "md:ml-auto",
             )}
           >
             {row.body}
           </p>
           <div className={cn("mt-5", row.flip && "md:flex md:flex-col md:items-end")}>
-            <p className="font-label text-[10px] tracking-[0.2em] text-[#e0b15a]/80 uppercase">Career</p>
+            <p className="font-label text-[11px] tracking-[0.16em] text-[#e0b15a]/80 uppercase">Career</p>
             <ul
               className={cn(
                 "mt-2.5 flex flex-wrap gap-2",
@@ -156,7 +156,7 @@ function SpectrumRow({ row }: { row: PathRow }) {
               {row.careers.map((job) => (
                 <li
                   key={job}
-                  className="border border-[#e0b15a]/45 bg-[#e0b15a]/10 px-3 py-1.5 text-[13px] font-medium tracking-wide text-[#f3d59a]"
+                  className="border border-[#e0b15a]/45 bg-[#e0b15a]/10 px-3 py-1.5 text-sm font-medium tracking-wide text-[#f3d59a]"
                 >
                   {job}
                 </li>
@@ -176,11 +176,9 @@ export function PathSection() {
     <section id="path" className="relative overflow-x-hidden bg-[#0c1424]">
       <div className="mx-auto max-w-6xl px-5 pt-24 pb-8 text-center md:px-8 md:pt-32">
         <div ref={head.ref} className={cn("spectrum-head", head.shown && "is-in")}>
-          <p className="font-label text-xs tracking-[0.14em] text-[#e0b15a]">과정</p>
-          <h2 className="font-display mt-4 text-3xl leading-[1.25] text-white md:text-5xl">
-            배우게 되는 것,
-            <br />
-            나아가게 되는 곳
+          <p className="text-sm font-bold tracking-wide text-[#e0b15a]">교육과정</p>
+          <h2 className="font-display mt-3 text-2xl leading-snug tracking-tight text-white md:text-4xl">
+            배우게 되는 것, 나아가게 되는 곳
           </h2>
         </div>
       </div>

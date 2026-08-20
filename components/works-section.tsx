@@ -29,7 +29,7 @@ function MarqueeRow({
               className="h-40 w-auto bg-card/70 object-contain ring-1 ring-foreground/10 sm:h-48 md:h-52"
             />
             {work.title ? (
-              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 rounded-b-2xl bg-foreground/55 px-3 py-2 text-xs text-background opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-foreground/55 px-3 py-2 text-sm text-background opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                 {work.title}
               </figcaption>
             ) : null}
@@ -47,13 +47,15 @@ export function WorksSection() {
   return (
     <section id="works" className="border-t border-foreground/10 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <p className="section-kicker">작품</p>
-          <h2 className="font-display mt-3 text-4xl leading-[1.2] text-foreground md:text-5xl">
-            이미 현장에서
-            <br />
-            울린 소리들
-          </h2>
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
+          <div>
+            <p className="section-kicker">주요 성과</p>
+            <h2 className="font-display mt-2 whitespace-nowrap text-2xl tracking-tight text-foreground md:text-4xl">
+              한경인의 주요 성과
+            </h2>
+          </div>
         </div>
+      </div>
 
       <div
         className="works-fade mt-12 flex flex-col gap-3"

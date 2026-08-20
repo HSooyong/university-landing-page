@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: var(--font-plex-kr), 'Apple SD Gothic Neo', sans-serif;
-  --font-label: var(--font-encode), var(--font-plex-kr), sans-serif;
+  --font-sans: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+  --font-label: var(--font-jakarta), "Pretendard", sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -94,27 +94,27 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-base leading-[1.7] text-foreground;
   }
 }
 
 @utility font-display {
   font-family: var(--font-sans);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
 }
 
 @utility font-label {
   font-family: var(--font-label);
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
 
 @utility section-kicker {
-  font-family: var(--font-label);
-  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   color: var(--primary);
 }
 
