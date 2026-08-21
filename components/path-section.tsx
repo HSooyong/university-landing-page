@@ -102,7 +102,7 @@ function SpectrumRow({ row }: { row: PathRow }) {
         >
           <div className="aspect-[16/7] md:aspect-auto md:h-[16.5rem] lg:h-[18.5rem]">
             <img
-              src={`${row.image}${row.image.includes("path-post") ? "?v=2" : ""}`}
+              src={`${row.image}${row.image.includes("path-post") ? "?v=3" : ""}`}
               alt={row.titleLine2 ?? row.title}
               className="h-full w-full object-cover"
               style={{ objectPosition: row.imagePos ?? "center" }}
