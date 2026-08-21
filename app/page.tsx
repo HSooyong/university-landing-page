@@ -14,17 +14,12 @@ export default function Page() {
       <SiteNav />
       <HeroSection />
 
-      <section id="intro" className="border-t border-foreground/10 py-24 md:py-32">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <p className="section-kicker">소개</p>
-          <h2 className="sr-only">
-            보컬, 싱어송라이터, EDM 프로듀서, Beat Maker, 연주 세션, 스튜디오 엔지니어. 당신을 알리는 소리를
-            배웁니다.
-          </h2>
-          <div className="mt-6 h-[220px] sm:h-[280px] md:h-[340px]">
-            <TextParticles />
-          </div>
-        </div>
+      <section id="intro" className="relative min-h-[70vh] overflow-hidden md:min-h-[82vh]">
+        <h2 className="sr-only">
+          보컬, 싱어송라이터, EDM 프로듀서, Beat Maker, 연주 세션, 스튜디오 엔지니어. 당신을 알리는 소리를
+          배웁니다.
+        </h2>
+        <TextParticles />
       </section>
 
       <PathSection />

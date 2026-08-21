@@ -5,8 +5,9 @@ import { LogoParticles } from "@/components/logo-particles"
 export function HeroSection() {
   return (
     <section className="relative flex min-h-[88vh] items-center overflow-hidden">
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-6 px-5 pt-32 pb-16 md:grid-cols-[1.2fr_0.8fr] md:gap-6 md:px-8 md:pt-36">
-        <div className="relative z-10">
+      <LogoParticles />
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-32 pb-16 md:px-8 md:pt-36">
+        <div className="max-w-xl md:max-w-[34rem]">
           <BrandMark className="text-5xl md:text-6xl" />
           <p className="mt-7 text-lg font-semibold tracking-tight text-primary md:text-xl">2027 모집요강</p>
           <h1 className="font-display mt-4 text-[clamp(1.85rem,6.8vw,3.9rem)] leading-[1.25] tracking-tight text-foreground">
@@ -29,10 +30,6 @@ export function HeroSection() {
               한경인의 주요 성과
             </a>
           </div>
-        </div>
-
-        <div className="relative h-[320px] sm:h-[400px] md:h-[540px]">
-          <LogoParticles />
         </div>
       </div>
     </section>

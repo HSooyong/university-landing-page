@@ -21,20 +21,20 @@ const MESSAGES = [
   ["당신을 알리는", "소리를 배웁니다"],
 ]
 
-const HOLD = 5.6
-const EXPLODE = 1.25
+const HOLD = 9.5
+const EXPLODE = 2.4
 const CYCLE = HOLD + EXPLODE
-const MAX_PARTICLES = 11000
+const MAX_PARTICLES = 14000
 
 function lerp(a: number, b: number, t: number) {
   return a + (b - a) * t
 }
 
 function colorFor(xNorm: number, seed: number) {
-  const navy = [18, 26, 58]
-  const ink = [12, 18, 42]
-  if (seed > 6.15) return [148, 72, 42]
-  const t = Math.min(1, Math.max(0, xNorm * 0.28 + (seed % 1) * 0.08))
+  const navy = [14, 20, 46]
+  const ink = [8, 12, 28]
+  if (seed > 6.2) return [118, 52, 28]
+  const t = Math.min(1, Math.max(0, xNorm * 0.22 + (seed % 1) * 0.06))
   return [lerp(ink[0], navy[0], t), lerp(ink[1], navy[1], t), lerp(ink[2], navy[2], t)]
 }
 
@@ -47,27 +47,27 @@ function sampleText(lines: string[], width: number, height: number, fontFamily: 
   if (!ctx) return [] as Particle[]
   ctx.scale(dpr, dpr)
   ctx.fillStyle = "#000"
-  ctx.textAlign = "left"
+  ctx.textAlign = "center"
   ctx.textBaseline = "top"
 
-  let size = Math.min(88, height * 0.36)
-  const pad = 6
-  while (size > 20) {
+  const padX = width * 0.08
+  let size = Math.min(92, height * 0.22)
+  while (size > 22) {
     ctx.font = `700 ${size}px ${fontFamily}`
     const maxW = Math.max(...lines.map((line) => ctx.measureText(line).width))
-    const blockH = size * 1.12 * lines.length
-    if (maxW <= width - pad * 2 && blockH <= height - pad * 2) break
+    const blockH = size * 1.14 * lines.length
+    if (maxW <= width - padX * 2 && blockH <= height * 0.72) break
     size -= 1
   }
 
   ctx.font = `700 ${size}px ${fontFamily}`
-  const lineH = size * 1.16
+  const lineH = size * 1.18
   const blockH = lineH * lines.length
-  const startY = (height - blockH) / 2 + size * 0.06
+  const startY = (height - blockH) / 2 + size * 0.04
 
   ctx.clearRect(0, 0, width, height)
   lines.forEach((line, i) => {
-    ctx.fillText(line, pad, startY + i * lineH)
+    ctx.fillText(line, width / 2, startY + i * lineH)
   })
 
   const data = ctx.getImageData(0, 0, c.width, c.height).data
@@ -93,7 +93,7 @@ function sampleText(lines: string[], width: number, height: number, fontFamily: 
           r,
           g,
           b,
-          size: cell * (1.08 + Math.random() * 0.16),
+          size: cell * (1.12 + Math.random() * 0.18),
           seed,
         })
       }
@@ -147,14 +147,13 @@ export function TextParticles() {
     let dead = false
 
     const scatter = (burst = false) => {
-      const spread = Math.min(w, h) * (burst ? 0.7 : 0.46)
       for (const p of particles) {
         const a = Math.random() * Math.PI * 2
-        const d = Math.random() * spread
-        p.x = Math.cos(a) * d
-        p.y = Math.sin(a) * d
-        p.vx = (Math.random() - 0.5) * (burst ? 7.5 : 3)
-        p.vy = (Math.random() - 0.5) * (burst ? 7.5 : 3)
+        const d = Math.random()
+        p.x = Math.cos(a) * d * w * (burst ? 0.58 : 0.46)
+        p.y = Math.sin(a) * d * h * (burst ? 0.5 : 0.4)
+        p.vx = (Math.random() - 0.5) * (burst ? 2.2 : 1)
+        p.vy = (Math.random() - 0.5) * (burst ? 2.2 : 1)
       }
     }
 
@@ -179,9 +178,9 @@ export function TextParticles() {
         vy: 0,
         hx: 0,
         hy: 0,
-        r: 36,
-        g: 50,
-        b: 102,
+        r: 14,
+        g: 20,
+        b: 46,
         size: 1.1,
         seed: Math.random() * Math.PI * 2,
       }))
@@ -193,6 +192,10 @@ export function TextParticles() {
 
     const onMove = (e: PointerEvent) => {
       const rect = canvas.getBoundingClientRect()
+      if (e.clientY < rect.top || e.clientY > rect.bottom || e.clientX < rect.left || e.clientX > rect.right) {
+        mouse.active = false
+        return
+      }
       mouse.x = e.clientX - rect.left - w / 2
       mouse.y = e.clientY - rect.top - h / 2
       mouse.active = true
@@ -200,7 +203,6 @@ export function TextParticles() {
     const onLeave = () => {
       mouse.active = false
     }
-    const onDown = () => scatter(true)
 
     const tick = (now: number) => {
       raf = requestAnimationFrame(tick)
@@ -223,18 +225,18 @@ export function TextParticles() {
           p.x = p.hx
           p.y = p.hy
         } else if (forming) {
-          p.vx += (p.hx - p.x) * 0.09
-          p.vy += (p.hy - p.y) * 0.09
-          p.vx *= 0.78
-          p.vy *= 0.78
-          p.x += p.vx + Math.sin(now * 0.0018 + p.seed) * 0.22
-          p.y += p.vy + Math.cos(now * 0.0016 + p.seed) * 0.22
+          p.vx += (p.hx - p.x) * 0.032
+          p.vy += (p.hy - p.y) * 0.032
+          p.vx *= 0.9
+          p.vy *= 0.9
+          p.x += p.vx + Math.sin(now * 0.0009 + p.seed) * 0.12
+          p.y += p.vy + Math.cos(now * 0.0008 + p.seed) * 0.12
         } else {
-          const a = Math.atan2(p.hy, p.hx) + p.seed * 0.12
-          p.vx += Math.cos(a) * 0.52
-          p.vy += Math.sin(a) * 0.52
-          p.vx *= 0.96
-          p.vy *= 0.96
+          const a = Math.atan2(p.hy, p.hx) + p.seed * 0.14
+          p.vx += Math.cos(a) * 0.18
+          p.vy += Math.sin(a) * 0.18
+          p.vx *= 0.985
+          p.vy *= 0.985
           p.x += p.vx
           p.y += p.vy
         }
@@ -243,10 +245,10 @@ export function TextParticles() {
           const dx = p.x - mouse.x
           const dy = p.y - mouse.y
           const d2 = dx * dx + dy * dy
-          const radius = 90
+          const radius = 140
           if (d2 < radius * radius && d2 > 0.01) {
             const d = Math.sqrt(d2)
-            const f = ((radius - d) / radius) * 1.6
+            const f = ((radius - d) / radius) * 1.2
             p.vx += (dx / d) * f
             p.vy += (dy / d) * f
           }
@@ -269,24 +271,22 @@ export function TextParticles() {
     const fonts = document.fonts?.ready ?? Promise.resolve()
     fonts.then(start)
 
-    canvas.addEventListener("pointermove", onMove)
-    canvas.addEventListener("pointerleave", onLeave)
-    canvas.addEventListener("pointerdown", onDown)
+    window.addEventListener("pointermove", onMove, { passive: true })
+    window.addEventListener("pointerleave", onLeave)
     ro.observe(wrapEl)
 
     return () => {
       dead = true
       cancelAnimationFrame(raf)
       ro.disconnect()
-      canvas.removeEventListener("pointermove", onMove)
-      canvas.removeEventListener("pointerleave", onLeave)
-      canvas.removeEventListener("pointerdown", onDown)
+      window.removeEventListener("pointermove", onMove)
+      window.removeEventListener("pointerleave", onLeave)
     }
   }, [])
 
   return (
-    <div ref={wrap} className="font-display relative h-full w-full">
-      <canvas ref={canvasRef} className="h-full w-full cursor-pointer blur-[0.8px]" aria-hidden="true" />
+    <div ref={wrap} className="font-display absolute inset-0">
+      <canvas ref={canvasRef} className="h-full w-full" aria-hidden="true" />
     </div>
   )
 }

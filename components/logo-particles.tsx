@@ -54,7 +54,7 @@ function sampleFromImage(img: HTMLImageElement, target: number) {
         r: data[i],
         g: data[i + 1],
         b: data[i + 2],
-        size: 1.35 + Math.random() * 1.15,
+        size: 1.25 + Math.random() * 1.2,
         seed: Math.random() * Math.PI * 2,
       })
     }
@@ -77,6 +77,8 @@ export function LogoParticles() {
     const mouse = { x: 0, y: 0, active: false }
     let w = 0
     let h = 0
+    let ox = 0
+    let oy = 0
     let particles: Particle[] = []
     let logo: HTMLImageElement | null = null
     let raf = 0
@@ -84,14 +86,13 @@ export function LogoParticles() {
     let dead = false
 
     const scatter = (burst = false) => {
-      const spread = Math.min(w, h) * (burst ? 0.55 : 0.42)
       for (const p of particles) {
         const a = Math.random() * Math.PI * 2
-        const d = Math.random() * spread
-        p.x = Math.cos(a) * d
-        p.y = Math.sin(a) * d
-        p.vx = (Math.random() - 0.5) * (burst ? 7 : 3)
-        p.vy = (Math.random() - 0.5) * (burst ? 7 : 3)
+        const d = Math.random()
+        p.x = Math.cos(a) * d * w * (burst ? 0.62 : 0.48)
+        p.y = Math.sin(a) * d * h * (burst ? 0.55 : 0.42)
+        p.vx = (Math.random() - 0.5) * (burst ? 2.4 : 1.1)
+        p.vy = (Math.random() - 0.5) * (burst ? 2.4 : 1.1)
       }
     }
 
@@ -100,78 +101,86 @@ export function LogoParticles() {
       const rect = wrapEl.getBoundingClientRect()
       w = rect.width
       h = rect.height
+      ox = w * (w < 720 ? 0.5 : 0.72)
+      oy = h * 0.52
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
       canvas.width = Math.max(1, Math.floor(w * dpr))
       canvas.height = Math.max(1, Math.floor(h * dpr))
       canvas.style.width = `${w}px`
       canvas.style.height = `${h}px`
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      particles = sampleFromImage(logo, Math.min(w, h) * 0.78)
+      particles = sampleFromImage(logo, Math.min(w, h) * (w < 720 ? 0.52 : 0.58))
       scatter(true)
       t0 = performance.now()
     }
 
     const onMove = (e: PointerEvent) => {
       const rect = canvas.getBoundingClientRect()
-      mouse.x = e.clientX - rect.left - w / 2
-      mouse.y = e.clientY - rect.top - h / 2
+      if (e.clientY < rect.top || e.clientY > rect.bottom || e.clientX < rect.left || e.clientX > rect.right) {
+        mouse.active = false
+        return
+      }
+      mouse.x = e.clientX - rect.left - ox
+      mouse.y = e.clientY - rect.top - oy
       mouse.active = true
     }
     const onLeave = () => {
       mouse.active = false
     }
-    const onDown = () => scatter(true)
 
     const tick = (now: number) => {
       raf = requestAnimationFrame(tick)
       const elapsed = (now - t0) / 1000
-      const cycle = elapsed % 7.4
-      const forming = cycle < 4.8
-      const exploding = cycle >= 5.4
+      const cycle = elapsed % 16.5
+      const forming = cycle < 11.2
+      const exploding = cycle >= 13.2
 
       ctx.clearRect(0, 0, w, h)
       ctx.save()
-      ctx.translate(w / 2, h / 2)
+      ctx.translate(ox, oy)
 
       for (const p of particles) {
         if (reduced) {
           p.x = p.hx
           p.y = p.hy
         } else if (forming) {
-          p.vx += (p.hx - p.x) * 0.085
-          p.vy += (p.hy - p.y) * 0.085
-          p.vx *= 0.78
-          p.vy *= 0.78
-          p.x += p.vx + Math.sin(now * 0.002 + p.seed) * 0.12
-          p.y += p.vy + Math.cos(now * 0.0018 + p.seed) * 0.12
+          p.vx += (p.hx - p.x) * 0.028
+          p.vy += (p.hy - p.y) * 0.028
+          p.vx *= 0.9
+          p.vy *= 0.9
+          p.x += p.vx + Math.sin(now * 0.0009 + p.seed) * 0.1
+          p.y += p.vy + Math.cos(now * 0.0008 + p.seed) * 0.1
         } else if (exploding) {
-          const a = Math.atan2(p.hy, p.hx) + p.seed * 0.15
-          p.vx += Math.cos(a) * 0.55
-          p.vy += Math.sin(a) * 0.55
-          p.vx *= 0.96
-          p.vy *= 0.96
+          const a = Math.atan2(p.hy, p.hx) + p.seed * 0.18
+          p.vx += Math.cos(a) * 0.16
+          p.vy += Math.sin(a) * 0.16
+          p.vx *= 0.985
+          p.vy *= 0.985
           p.x += p.vx
           p.y += p.vy
         } else {
-          p.vx *= 0.94
-          p.vy *= 0.94
-          p.x += p.vx + Math.sin(now * 0.003 + p.seed) * 0.35
-          p.y += p.vy + Math.cos(now * 0.0026 + p.seed) * 0.35
+          p.vx *= 0.97
+          p.vy *= 0.97
+          p.x += p.vx + Math.sin(now * 0.0014 + p.seed) * 0.22
+          p.y += p.vy + Math.cos(now * 0.0012 + p.seed) * 0.22
         }
 
         if (mouse.active && !reduced) {
           const dx = p.x - mouse.x
           const dy = p.y - mouse.y
           const d2 = dx * dx + dy * dy
-          const radius = 118
+          const radius = 150
           if (d2 < radius * radius && d2 > 0.01) {
             const d = Math.sqrt(d2)
-            const f = ((radius - d) / radius) * 2.4
+            const f = ((radius - d) / radius) * 1.15
             p.vx += (dx / d) * f
             p.vy += (dy / d) * f
           }
         }
 
+        const absX = ox + p.x
+        const leftFade = w < 720 ? 1 : Math.min(1, Math.max(0.16, (absX - w * 0.08) / (w * 0.38)))
+        ctx.globalAlpha = leftFade
         ctx.fillStyle = `rgb(${p.r},${p.g},${p.b})`
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
@@ -192,23 +201,21 @@ export function LogoParticles() {
       })
       .catch(() => {})
 
-    canvas.addEventListener("pointermove", onMove)
-    canvas.addEventListener("pointerleave", onLeave)
-    canvas.addEventListener("pointerdown", onDown)
+    window.addEventListener("pointermove", onMove, { passive: true })
+    window.addEventListener("pointerleave", onLeave)
 
     return () => {
       dead = true
       cancelAnimationFrame(raf)
       ro.disconnect()
-      canvas.removeEventListener("pointermove", onMove)
-      canvas.removeEventListener("pointerleave", onLeave)
-      canvas.removeEventListener("pointerdown", onDown)
+      window.removeEventListener("pointermove", onMove)
+      window.removeEventListener("pointerleave", onLeave)
     }
   }, [])
 
   return (
-    <div ref={wrap} className="relative h-full w-full">
-      <canvas ref={canvasRef} className="h-full w-full cursor-pointer" aria-hidden="true" />
+    <div ref={wrap} className="absolute inset-0">
+      <canvas ref={canvasRef} className="h-full w-full" aria-hidden="true" />
     </div>
   )
 }
