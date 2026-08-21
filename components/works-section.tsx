@@ -50,7 +50,7 @@ export function WorksSection() {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
           <div>
             <p className="section-kicker">주요 성과</p>
-            <h2 className="font-display mt-2 whitespace-nowrap text-2xl tracking-tight text-foreground md:text-4xl">
+            <h2 className="font-display section-title whitespace-nowrap text-2xl text-foreground md:text-4xl">
               한경인의 주요 성과
             </h2>
           </div>

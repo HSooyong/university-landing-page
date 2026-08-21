@@ -101,13 +101,15 @@
 @utility font-display {
   font-family: var(--font-sans);
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
 }
 
 @utility font-label {
   font-family: var(--font-label);
   font-weight: 600;
   letter-spacing: 0.02em;
+  line-height: 1.25;
 }
 
 @utility section-kicker {
@@ -115,7 +117,16 @@
   font-size: 0.9375rem;
   font-weight: 700;
   letter-spacing: 0.04em;
+  line-height: 1.25;
   color: var(--primary);
+}
+
+@utility section-title {
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
 }
 
 @utility poster-wash {

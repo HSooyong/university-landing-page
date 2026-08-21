@@ -216,7 +216,7 @@ export function FacultySection() {
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="max-w-2xl">
           <p className="section-kicker">교수진</p>
-          <h2 className="font-display mt-3 text-4xl leading-[1.2] text-foreground md:text-5xl">
+          <h2 className="font-display section-title text-4xl text-foreground md:text-5xl">
             현장을 아는 교수진이
             <br />
             당신의 꿈을 설계합니다
@@ -293,7 +293,7 @@ export function FacultySection() {
               </div>
               <div className="px-6 py-6 pr-14 sm:px-8">
                 <p className="text-sm font-semibold text-primary">{active.role}</p>
-                <h3 id="faculty-modal-title" className="font-display mt-2 text-3xl text-foreground">
+                <h3 id="faculty-modal-title" className="font-display mt-3 text-3xl text-foreground">
                   {active.name}
                 </h3>
                 <div className="mt-4 inline-flex items-center gap-3 border border-primary/20 bg-primary/5 px-3 py-2">

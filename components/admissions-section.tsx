@@ -24,7 +24,7 @@ export function AdmissionsSection() {
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="max-w-3xl">
           <p className="section-kicker">모집요강</p>
-          <h2 className="font-display mt-3 text-4xl leading-[1.2] text-foreground md:text-5xl">
+          <h2 className="font-display section-title text-4xl text-foreground md:text-5xl">
             2027학년도 수시 모집요강
           </h2>
           <p className="mt-3 text-base leading-relaxed text-muted-foreground md:mt-4 md:text-lg">
@@ -107,7 +107,7 @@ export function AdmissionsSection() {
 
         <div className="mt-12 md:mt-16">
           <p className="section-kicker">실기고사</p>
-          <h3 className="font-display mt-3 text-2xl font-bold leading-tight text-foreground md:text-4xl">
+          <h3 className="font-display section-title text-2xl font-bold text-foreground md:text-4xl">
             07 실기고사
           </h3>
 

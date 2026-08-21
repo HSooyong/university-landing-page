@@ -102,7 +102,7 @@ function SpectrumRow({ row }: { row: PathRow }) {
         >
           <div className="aspect-[16/7] md:aspect-auto md:h-[16.5rem] lg:h-[18.5rem]">
             <img
-              src={row.image}
+              src={`${row.image}${row.image.includes("path-post") ? "?v=2" : ""}`}
               alt={row.titleLine2 ?? row.title}
               className="h-full w-full object-cover"
               style={{ objectPosition: row.imagePos ?? "center" }}
@@ -127,8 +127,8 @@ function SpectrumRow({ row }: { row: PathRow }) {
             shown && "is-in",
           )}
         >
-          <p className="font-label text-xs tracking-[0.16em] text-[#e0b15a] uppercase">{row.kicker}</p>
-          <h3 className="font-label mt-3 text-[1.8rem] leading-[1.15] font-bold tracking-[0.03em] text-[#e0b15a] uppercase md:text-[2rem]">
+          <p className="font-label text-xs tracking-[0.04em] text-[#e0b15a] uppercase">{row.kicker}</p>
+          <h3 className="font-label mt-3 text-[1.8rem] font-bold tracking-[0.03em] text-[#e0b15a] uppercase md:text-[2rem]">
             {row.title}
             {row.titleLine2 ? (
               <>
@@ -176,8 +176,8 @@ export function PathSection() {
     <section id="path" className="relative overflow-x-hidden bg-[#0c1424]">
       <div className="mx-auto max-w-6xl px-5 pt-24 pb-8 text-center md:px-8 md:pt-32">
         <div ref={head.ref} className={cn("spectrum-head", head.shown && "is-in")}>
-          <p className="text-sm font-bold tracking-wide text-[#e0b15a]">교육과정</p>
-          <h2 className="font-display mt-3 text-2xl leading-snug tracking-tight text-white md:text-4xl">
+          <p className="text-sm font-bold tracking-[0.04em] text-[#e0b15a]">교육과정</p>
+          <h2 className="font-display section-title text-2xl text-white md:text-4xl">
             배우게 되는 것, 나아가게 되는 곳
           </h2>
         </div>

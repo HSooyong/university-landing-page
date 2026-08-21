@@ -10,7 +10,7 @@ export function HeroSection() {
         <div className="max-w-xl md:max-w-[34rem]">
           <BrandMark className="text-5xl md:text-6xl" />
           <p className="mt-7 text-lg font-semibold tracking-tight text-primary md:text-xl">2027 모집요강</p>
-          <h1 className="font-display mt-4 text-[clamp(1.85rem,6.8vw,3.9rem)] leading-[1.25] tracking-tight text-foreground">
+          <h1 className="font-display mt-3 text-[clamp(1.85rem,6.8vw,3.9rem)] text-foreground">
             <span className="block whitespace-nowrap">수도권 유일 국립 4년제</span>
             <span className="block whitespace-nowrap">실용음악학전공</span>
           </h1>
