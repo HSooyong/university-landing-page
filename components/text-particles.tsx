@@ -21,8 +21,8 @@ const MESSAGES = [
   ["당신을 알리는", "소리를 배웁니다"],
 ]
 
-const HOLD = 9.5
-const EXPLODE = 2.4
+const HOLD = 11.4
+const EXPLODE = 2.88
 const CYCLE = HOLD + EXPLODE
 const MAX_PARTICLES = 14000
 
@@ -152,8 +152,8 @@ export function TextParticles() {
         const d = Math.random()
         p.x = Math.cos(a) * d * w * (burst ? 0.58 : 0.46)
         p.y = Math.sin(a) * d * h * (burst ? 0.5 : 0.4)
-        p.vx = (Math.random() - 0.5) * (burst ? 2.2 : 1)
-        p.vy = (Math.random() - 0.5) * (burst ? 2.2 : 1)
+        p.vx = (Math.random() - 0.5) * (burst ? 1.76 : 0.8)
+        p.vy = (Math.random() - 0.5) * (burst ? 1.76 : 0.8)
       }
     }
 
@@ -225,16 +225,16 @@ export function TextParticles() {
           p.x = p.hx
           p.y = p.hy
         } else if (forming) {
-          p.vx += (p.hx - p.x) * 0.032
-          p.vy += (p.hy - p.y) * 0.032
-          p.vx *= 0.9
-          p.vy *= 0.9
-          p.x += p.vx + Math.sin(now * 0.0009 + p.seed) * 0.12
-          p.y += p.vy + Math.cos(now * 0.0008 + p.seed) * 0.12
+          p.vx += (p.hx - p.x) * 0.0256
+          p.vy += (p.hy - p.y) * 0.0256
+          p.vx *= 0.91
+          p.vy *= 0.91
+          p.x += p.vx + Math.sin(now * 0.00072 + p.seed) * 0.096
+          p.y += p.vy + Math.cos(now * 0.00064 + p.seed) * 0.096
         } else {
           const a = Math.atan2(p.hy, p.hx) + p.seed * 0.14
-          p.vx += Math.cos(a) * 0.18
-          p.vy += Math.sin(a) * 0.18
+          p.vx += Math.cos(a) * 0.144
+          p.vy += Math.sin(a) * 0.144
           p.vx *= 0.985
           p.vy *= 0.985
           p.x += p.vx
@@ -248,7 +248,7 @@ export function TextParticles() {
           const radius = 140
           if (d2 < radius * radius && d2 > 0.01) {
             const d = Math.sqrt(d2)
-            const f = ((radius - d) / radius) * 1.2
+            const f = ((radius - d) / radius) * 0.96
             p.vx += (dx / d) * f
             p.vy += (dy / d) * f
           }

@@ -91,8 +91,8 @@ export function LogoParticles() {
         const d = Math.random()
         p.x = Math.cos(a) * d * w * (burst ? 0.62 : 0.48)
         p.y = Math.sin(a) * d * h * (burst ? 0.55 : 0.42)
-        p.vx = (Math.random() - 0.5) * (burst ? 2.4 : 1.1)
-        p.vy = (Math.random() - 0.5) * (burst ? 2.4 : 1.1)
+        p.vx = (Math.random() - 0.5) * (burst ? 2.16 : 0.99)
+        p.vy = (Math.random() - 0.5) * (burst ? 2.16 : 0.99)
       }
     }
 
@@ -131,9 +131,9 @@ export function LogoParticles() {
     const tick = (now: number) => {
       raf = requestAnimationFrame(tick)
       const elapsed = (now - t0) / 1000
-      const cycle = elapsed % 16.5
-      const forming = cycle < 11.2
-      const exploding = cycle >= 13.2
+      const cycle = elapsed % 21.85
+      const forming = cycle < 16.02
+      const exploding = cycle >= 18.22
 
       ctx.clearRect(0, 0, w, h)
       ctx.save()
@@ -144,25 +144,25 @@ export function LogoParticles() {
           p.x = p.hx
           p.y = p.hy
         } else if (forming) {
-          p.vx += (p.hx - p.x) * 0.028
-          p.vy += (p.hy - p.y) * 0.028
-          p.vx *= 0.9
-          p.vy *= 0.9
-          p.x += p.vx + Math.sin(now * 0.0009 + p.seed) * 0.1
-          p.y += p.vy + Math.cos(now * 0.0008 + p.seed) * 0.1
+          p.vx += (p.hx - p.x) * 0.0196
+          p.vy += (p.hy - p.y) * 0.0196
+          p.vx *= 0.91
+          p.vy *= 0.91
+          p.x += p.vx + Math.sin(now * 0.0008 + p.seed) * 0.09
+          p.y += p.vy + Math.cos(now * 0.00072 + p.seed) * 0.09
         } else if (exploding) {
           const a = Math.atan2(p.hy, p.hx) + p.seed * 0.18
-          p.vx += Math.cos(a) * 0.16
-          p.vy += Math.sin(a) * 0.16
-          p.vx *= 0.985
-          p.vy *= 0.985
+          p.vx += Math.cos(a) * 0.144
+          p.vy += Math.sin(a) * 0.144
+          p.vx *= 0.987
+          p.vy *= 0.987
           p.x += p.vx
           p.y += p.vy
         } else {
-          p.vx *= 0.97
-          p.vy *= 0.97
-          p.x += p.vx + Math.sin(now * 0.0014 + p.seed) * 0.22
-          p.y += p.vy + Math.cos(now * 0.0012 + p.seed) * 0.22
+          p.vx *= 0.973
+          p.vy *= 0.973
+          p.x += p.vx + Math.sin(now * 0.00126 + p.seed) * 0.2
+          p.y += p.vy + Math.cos(now * 0.00108 + p.seed) * 0.2
         }
 
         if (mouse.active && !reduced) {
@@ -172,7 +172,7 @@ export function LogoParticles() {
           const radius = 150
           if (d2 < radius * radius && d2 > 0.01) {
             const d = Math.sqrt(d2)
-            const f = ((radius - d) / radius) * 1.15
+            const f = ((radius - d) / radius) * 1.04
             p.vx += (dx / d) * f
             p.vy += (dy / d) * f
           }
