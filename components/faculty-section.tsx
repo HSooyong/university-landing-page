@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import { X, Mail } from "lucide-react"
-import { AestheticMotif } from "@/components/aesthetic-motif"
 
 type CreditBlock = {
   title: string
@@ -214,7 +213,6 @@ export function FacultySection() {
 
   return (
     <section id="faculty" className="relative border-t border-foreground/15 py-24 md:py-32">
-      <AestheticMotif />
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div>
           <p className="section-kicker">교수진</p>

@@ -1,4 +1,3 @@
-import { AestheticMotif } from "@/components/aesthetic-motif"
 import { works, type Work } from "@/lib/works"
 import { cn } from "@/lib/utils"
 
@@ -47,7 +46,6 @@ export function WorksSection() {
 
   return (
     <section id="works" className="relative overflow-hidden border-t border-foreground/15 py-24 md:py-32">
-      <AestheticMotif />
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div>
           <p className="section-kicker">주요 성과</p>

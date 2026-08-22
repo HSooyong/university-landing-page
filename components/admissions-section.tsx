@@ -1,5 +1,4 @@
 import { CalendarDays, GraduationCap, CheckCircle2, ArrowUpRight } from "lucide-react"
-import { AestheticMotif } from "@/components/aesthetic-motif"
 
 function Notes({ items }: { items: string[] }) {
   return (
@@ -22,7 +21,6 @@ const notes = [
 export function AdmissionsSection() {
   return (
     <section id="admissions" className="relative border-t border-foreground/15 py-24 md:py-32">
-      <AestheticMotif />
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div>
           <p className="section-kicker">모집요강</p>
@@ -82,14 +80,14 @@ export function AdmissionsSection() {
               </div>
               <ul className="mt-4 space-y-2.5">
                 {[
-                  "고등학교 졸업(예정)자 또는 동등 이상 학력 인정자",
-                  "모집인원 13명 (일반 9 · 특수교육 4, 대상별 선발)",
-                  "특수교육: 장애인 등록 · 특수교육대상자 · 상이등급자",
+                  "고등학교 졸업(예정)자 또는 동등 이상\n학력 인정자",
+                  "모집인원 13명\n(일반 9 · 특수교육 4, 대상별 선발)",
+                  "특수교육\n장애인 등록 · 특수교육대상자 · 상이등급자",
                   "전형료 30,000원",
                 ].map((c) => (
                   <li key={c} className="flex gap-2.5 text-base text-foreground">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
-                    <span className="leading-relaxed">{c}</span>
+                    <span className="whitespace-pre-line leading-relaxed">{c}</span>
                   </li>
                 ))}
               </ul>
@@ -118,51 +116,51 @@ export function AdmissionsSection() {
               <thead>
                 <tr className="bg-primary text-primary-foreground">
                   <th className="px-4 py-3.5 text-center md:px-5 md:py-4">구분</th>
-                  <th className="px-4 py-3.5 text-center md:px-5 md:py-4" colSpan={2}>
+                  <th className="border-l border-primary-foreground/25 px-4 py-3.5 text-center md:px-5 md:py-4" colSpan={2}>
                     심사
                   </th>
-                  <th className="px-4 py-3.5 text-center md:px-5 md:py-4">과제곡</th>
-                  <th className="px-4 py-3.5 text-center md:px-5 md:py-4">비고</th>
+                  <th className="border-l border-primary-foreground/25 px-4 py-3.5 text-center md:px-5 md:py-4">과제곡</th>
+                  <th className="border-l border-primary-foreground/25 px-4 py-3.5 text-center md:px-5 md:py-4">비고</th>
                 </tr>
               </thead>
               <tbody className="bg-card/70">
-                <tr className="border-t border-foreground/12">
+                <tr className="border-t border-foreground/20">
                   <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5">보컬</td>
-                  <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5" colSpan={2}>
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5" colSpan={2}>
                     가창 실기
                   </td>
-                  <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5">자유곡 1곡</td>
-                  <td className="px-4 py-4 align-middle md:px-5 md:py-5">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">자유곡 1곡</td>
+                  <td className="border-l border-foreground/20 px-4 py-4 align-middle md:px-5 md:py-5">
                     <Notes items={["Audio File 반주MR 제출", "반주자 동반 가능", "자작곡 가능"]} />
                   </td>
                 </tr>
 
-                <tr className="border-t border-foreground/12">
+                <tr className="border-t border-foreground/20">
                   <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5" rowSpan={2}>
                     작곡
                   </td>
-                  <td className="px-3 py-4 text-center align-middle text-primary md:px-4 md:py-5" rowSpan={2}>
+                  <td className="border-l border-foreground/20 px-3 py-4 text-center align-middle text-primary md:px-4 md:py-5" rowSpan={2}>
                     택 1
                   </td>
-                  <td className="border-l border-foreground/12 px-4 py-4 text-center align-middle md:px-5 md:py-5">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">
                     작품 실기
                   </td>
-                  <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5">자작곡 1곡</td>
-                  <td className="px-4 py-4 align-middle md:px-5 md:py-5">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">자작곡 1곡</td>
+                  <td className="border-l border-foreground/20 px-4 py-4 align-middle md:px-5 md:py-5">
                     <Notes items={["Audio File 제출", "작품 포트폴리오 지참"]} />
                   </td>
                 </tr>
-                <tr className="border-t border-foreground/12">
-                  <td className="border-l border-foreground/12 px-4 py-4 text-center align-middle md:px-5 md:py-5">
+                <tr className="border-t border-foreground/20">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">
                     기악연주 실기
                   </td>
-                  <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5">자유곡 1곡</td>
-                  <td className="px-4 py-4 align-middle md:px-5 md:py-5">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">자유곡 1곡</td>
+                  <td className="border-l border-foreground/20 px-4 py-4 align-middle md:px-5 md:py-5">
                     <Notes items={["모든 악기 가능", "Audio File 반주MR 제출", "반주자 동반 가능"]} />
                   </td>
                 </tr>
 
-                <tr className="border-t border-foreground/12">
+                <tr className="border-t border-foreground/20">
                   <td className="px-4 py-4 text-center align-middle leading-relaxed md:px-5 md:py-5" rowSpan={3}>
                     힙합
                     <br />
@@ -170,45 +168,45 @@ export function AdmissionsSection() {
                     <br />
                     음향
                   </td>
-                  <td className="px-3 py-4 text-center align-middle text-primary md:px-4 md:py-5" rowSpan={3}>
+                  <td className="border-l border-foreground/20 px-3 py-4 text-center align-middle text-primary md:px-4 md:py-5" rowSpan={3}>
                     택 1
                   </td>
-                  <td className="border-l border-foreground/12 px-4 py-4 text-center align-middle md:px-5 md:py-5">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">
                     랩 연주 실기
                   </td>
-                  <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5">자유곡 1곡</td>
-                  <td className="px-4 py-4 align-middle md:px-5 md:py-5">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">자유곡 1곡</td>
+                  <td className="border-l border-foreground/20 px-4 py-4 align-middle md:px-5 md:py-5">
                     <Notes items={["Audio File 반주MR 제출", "자작곡 가능"]} />
                   </td>
                 </tr>
-                <tr className="border-t border-foreground/12">
-                  <td className="border-l border-foreground/12 px-4 py-4 text-center align-middle md:px-5 md:py-5">
+                <tr className="border-t border-foreground/20">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">
                     작품 실기
                   </td>
-                  <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5">자작곡 1곡</td>
-                  <td className="px-4 py-4 align-middle md:px-5 md:py-5">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">자작곡 1곡</td>
+                  <td className="border-l border-foreground/20 px-4 py-4 align-middle md:px-5 md:py-5">
                     <Notes items={["Audio File 제출", "작품 포트폴리오 지참"]} />
                   </td>
                 </tr>
-                <tr className="border-t border-foreground/12">
-                  <td className="border-l border-foreground/12 px-4 py-4 text-center align-middle md:px-5 md:py-5">
+                <tr className="border-t border-foreground/20">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">
                     기악연주 실기
                   </td>
-                  <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5">자유곡 1곡</td>
-                  <td className="px-4 py-4 align-middle md:px-5 md:py-5">
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5">자유곡 1곡</td>
+                  <td className="border-l border-foreground/20 px-4 py-4 align-middle md:px-5 md:py-5">
                     <Notes items={["모든 악기 가능", "Audio File 반주MR 제출", "반주자 동반 가능"]} />
                   </td>
                 </tr>
 
-                <tr className="border-t border-foreground/12">
+                <tr className="border-t border-foreground/20">
                   <td className="px-4 pb-1.5 pt-4 text-center align-bottom md:px-5 md:pt-5">클래식 피아노</td>
-                  <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5" rowSpan={2} colSpan={2}>
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5" rowSpan={2} colSpan={2}>
                     피아노연주 실기
                   </td>
-                  <td className="px-4 py-4 text-center align-middle md:px-5 md:py-5" rowSpan={2}>
+                  <td className="border-l border-foreground/20 px-4 py-4 text-center align-middle md:px-5 md:py-5" rowSpan={2}>
                     자유곡 1곡
                   </td>
-                  <td className="px-4 py-4 align-middle md:px-5 md:py-5" rowSpan={2}>
+                  <td className="border-l border-foreground/20 px-4 py-4 align-middle md:px-5 md:py-5" rowSpan={2}>
                     <Notes items={["자작곡 가능"]} />
                   </td>
                 </tr>

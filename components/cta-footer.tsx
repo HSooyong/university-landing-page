@@ -1,5 +1,4 @@
 import { ArrowRight, MapPin } from "lucide-react"
-import { AestheticMotif } from "@/components/aesthetic-motif"
 import { BrandMark } from "@/components/brand-mark"
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -43,7 +42,6 @@ export function CtaFooter() {
   return (
     <>
       <section id="apply" className="relative overflow-hidden border-t border-foreground/15">
-        <AestheticMotif variant="cta" />
         <div className="relative z-10 mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-36">
           <p className="section-kicker">문의</p>
           <h2 className="font-display section-title max-w-3xl text-4xl text-foreground md:text-6xl">

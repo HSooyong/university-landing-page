@@ -1,12 +1,10 @@
 import { ArrowRight } from "lucide-react"
-import { AestheticMotif } from "@/components/aesthetic-motif"
 import { BrandMark } from "@/components/brand-mark"
 import { LogoParticles } from "@/components/logo-particles"
 
 export function HeroSection() {
   return (
     <section className="relative flex min-h-[88vh] items-center overflow-hidden">
-      <AestheticMotif variant="hero" />
       <LogoParticles />
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-32 pb-16 md:px-8 md:pt-36">
         <div className="flex max-w-3xl flex-col items-start">
