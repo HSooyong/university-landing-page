@@ -8,7 +8,7 @@ export function HeroSection() {
       <LogoParticles />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 z-[5] w-[82%] bg-gradient-to-r from-background via-background/90 to-transparent md:hidden"
+        className="pointer-events-none absolute inset-y-0 left-0 z-[5] w-[52%] bg-gradient-to-r from-background via-background/86 to-transparent md:hidden"
       />
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-32 pb-16 md:px-8 md:pt-36">
         <div className="flex max-w-3xl flex-col items-start">
