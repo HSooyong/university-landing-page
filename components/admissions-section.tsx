@@ -21,10 +21,10 @@ const notes = [
 
 export function AdmissionsSection() {
   return (
-    <section id="admissions" className="relative border-t border-foreground/10 py-16 md:py-32">
+    <section id="admissions" className="relative border-t border-foreground/15 py-24 md:py-32">
       <AestheticMotif />
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
-        <div className="max-w-3xl">
+        <div>
           <p className="section-kicker">모집요강</p>
           <h2 className="font-display section-title text-4xl text-foreground md:text-5xl">
             2027학년도 수시 모집요강

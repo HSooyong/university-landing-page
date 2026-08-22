@@ -213,10 +213,10 @@ export function FacultySection() {
   }, [active])
 
   return (
-    <section id="faculty" className="relative border-t border-foreground/10 py-24 md:py-32">
+    <section id="faculty" className="relative border-t border-foreground/15 py-24 md:py-32">
       <AestheticMotif />
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
-        <div className="max-w-2xl">
+        <div>
           <p className="section-kicker">교수진</p>
           <h2 className="font-display section-title text-4xl text-foreground md:text-5xl">
             현장을 아는 교수진이
@@ -243,7 +243,7 @@ export function FacultySection() {
                   />
                 </div>
               </div>
-              <div className="relative pt-4 pr-10">
+              <div className="pt-4">
                 <p className="text-sm font-semibold text-primary">{f.role}</p>
                 <h3 className="mt-1 text-xl font-bold text-foreground">{f.name}</h3>
                 <div className="mt-3 flex items-stretch gap-3">
@@ -256,12 +256,9 @@ export function FacultySection() {
                     </p>
                   </div>
                 </div>
-                <span
-                  className="font-label absolute right-0 bottom-0 text-[10px] tracking-[0.2em] text-primary/55 uppercase transition-colors duration-200 group-hover:text-primary"
-                  aria-hidden="true"
-                >
+                <p className="font-label mt-3 text-[10px] tracking-[0.2em] text-primary/55 uppercase transition-colors duration-200 group-hover:text-primary">
                   Click
-                </span>
+                </p>
               </div>
             </button>
           ))}

@@ -86,22 +86,22 @@ function SpectrumRow({ row }: { row: PathRow }) {
   const { ref, shown } = useReveal<HTMLDivElement>()
 
   return (
-    <div ref={ref} className="overflow-hidden py-10 md:py-14">
+    <div ref={ref} className="overflow-hidden py-6 md:py-8">
       <div
         className={cn(
-          "flex flex-col items-stretch md:flex-row md:items-center",
-          row.flip && "md:flex-row-reverse",
+          "grid items-center gap-6 md:grid-cols-2 md:gap-12",
+          row.flip && "md:[&>figure]:order-2 md:[&>div]:order-1",
         )}
       >
         <figure
           className={cn(
-            "relative w-full shrink-0 overflow-hidden md:w-[54%]",
+            "relative overflow-hidden border border-white/20",
             "spectrum-media",
             row.flip && "spectrum-media-flip",
             shown && "is-in",
           )}
         >
-          <div className="aspect-[16/7] md:aspect-auto md:h-[16.5rem] lg:h-[18.5rem]">
+          <div className="aspect-[16/10]">
             <img
               src={`${row.image}${row.image.includes("path-post") ? "?v=3" : ""}`}
               alt={row.titleLine2 ?? row.title}
@@ -109,34 +109,24 @@ function SpectrumRow({ row }: { row: PathRow }) {
               style={{ objectPosition: row.imagePos ?? "center" }}
             />
           </div>
-          <span
-            className={cn(
-              "pointer-events-none absolute inset-y-0 w-2/5",
-              row.flip
-                ? "left-0 bg-gradient-to-r from-black to-transparent"
-                : "right-0 bg-gradient-to-l from-black to-transparent",
-            )}
-          />
         </figure>
 
         <div
           className={cn(
-            "relative z-10 w-full px-5 py-7 md:w-[46%] md:px-12 lg:px-16",
-            row.flip ? "md:text-right" : "",
             "spectrum-copy",
-            row.flip && "spectrum-copy-flip",
+            row.flip && "spectrum-copy-flip md:text-right",
             shown && "is-in",
           )}
         >
           <p
             className={cn(
-              "inline-flex bg-white px-2.5 py-1 text-[11px] font-extrabold italic tracking-[0.04em] text-black uppercase",
+              "inline-flex bg-white px-2.5 py-1 text-[11px] font-extrabold tracking-[0.04em] text-black uppercase",
               row.flip && "md:ml-auto",
             )}
           >
             {row.kicker}
           </p>
-          <h3 className="font-label mt-3 text-[1.8rem] font-extrabold italic tracking-[0.03em] text-white uppercase md:text-[2rem]">
+          <h3 className="font-label mt-3 text-[1.8rem] font-extrabold tracking-tight text-white uppercase md:text-[2rem]">
             {row.title}
             {row.titleLine2 ? (
               <>
@@ -147,7 +137,7 @@ function SpectrumRow({ row }: { row: PathRow }) {
           </h3>
           <p
             className={cn(
-              "mt-4 whitespace-pre-line text-base leading-relaxed text-white/90 md:max-w-sm",
+              "mt-4 max-w-sm whitespace-pre-line text-base leading-relaxed text-white/90",
               row.flip && "md:ml-auto",
             )}
           >
@@ -155,16 +145,11 @@ function SpectrumRow({ row }: { row: PathRow }) {
           </p>
           <div className={cn("mt-5", row.flip && "md:flex md:flex-col md:items-end")}>
             <p className="font-label text-[11px] tracking-[0.16em] text-white/70 uppercase">Career</p>
-            <ul
-              className={cn(
-                "mt-2.5 flex flex-wrap gap-2",
-                row.flip && "md:justify-end",
-              )}
-            >
+            <ul className={cn("mt-2.5 flex flex-wrap gap-2", row.flip && "md:justify-end")}>
               {row.careers.map((job) => (
                 <li
                   key={job}
-                  className="rounded-full border border-white/55 px-3 py-1.5 text-sm font-medium tracking-wide text-white"
+                  className="border border-white/55 px-3 py-1.5 text-sm font-medium tracking-wide text-white"
                 >
                   {job}
                 </li>
@@ -183,18 +168,18 @@ export function PathSection() {
   return (
     <section id="path" className="relative overflow-x-hidden bg-black">
       <AestheticMotif variant="navy" />
-      <div className="relative z-10 mx-auto max-w-6xl px-5 pt-24 pb-8 text-center md:px-8 md:pt-32">
+      <div className="relative z-10 mx-auto max-w-6xl px-5 pt-24 pb-10 md:px-8 md:pt-32">
         <div ref={head.ref} className={cn("spectrum-head", head.shown && "is-in")}>
-          <p className="inline-flex bg-white px-2.5 py-1 text-[13px] font-extrabold italic tracking-[0.04em] text-black">
+          <p className="inline-flex bg-white px-2.5 py-1 text-[13px] font-extrabold tracking-[0.04em] text-black">
             교육과정
           </p>
-          <h2 className="font-display section-title text-2xl text-white md:text-4xl">
+          <h2 className="font-display section-title text-4xl text-white md:text-5xl">
             실무를 배우는 과정, 현장으로 이어지는 길
           </h2>
         </div>
       </div>
 
-      <div className="relative z-10 pb-16 md:pb-24">
+      <div className="relative z-10 mx-auto max-w-6xl px-5 pb-24 md:px-8 md:pb-32">
         {rows.map((row) => (
           <SpectrumRow key={row.title} row={row} />
         ))}

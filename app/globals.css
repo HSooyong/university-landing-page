@@ -101,7 +101,6 @@
 @utility font-display {
   font-family: var(--font-sans);
   font-weight: 800;
-  font-style: italic;
   letter-spacing: -0.03em;
   line-height: 1.25;
 }
@@ -121,7 +120,6 @@
   font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 800;
-  font-style: italic;
   letter-spacing: 0.04em;
   line-height: 1.25;
   color: var(--background);
@@ -131,7 +129,6 @@
   margin-top: 0.75rem;
   font-family: var(--font-sans);
   font-weight: 800;
-  font-style: italic;
   letter-spacing: -0.03em;
   line-height: 1.25;
 }
@@ -142,10 +139,9 @@
 
 @utility aesthetic-grid {
   background-image:
-    linear-gradient(to right, rgb(0 0 0 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(0 0 0 / 0.045) 1px, transparent 1px),
-    repeating-conic-gradient(from 0deg at 50% 42%, transparent 0deg, transparent 14.6deg, rgb(0 0 0 / 0.028) 14.6deg, rgb(0 0 0 / 0.028) 15deg);
-  background-size: 52px 52px, 52px 52px, 100% 100%;
+    linear-gradient(to right, rgb(0 0 0 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(0 0 0 / 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 @utility grain {

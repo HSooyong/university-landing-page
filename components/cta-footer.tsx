@@ -42,7 +42,7 @@ const socials = [
 export function CtaFooter() {
   return (
     <>
-      <section id="apply" className="relative overflow-hidden border-t border-foreground/10">
+      <section id="apply" className="relative overflow-hidden border-t border-foreground/15">
         <AestheticMotif variant="cta" />
         <div className="relative z-10 mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-36">
           <p className="section-kicker">문의</p>
@@ -56,14 +56,14 @@ export function CtaFooter() {
               href="https://ipsi.hknu.ac.kr"
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center justify-center gap-2 bg-primary px-7 py-4 text-base font-semibold italic text-primary-foreground transition-opacity hover:opacity-90"
+              className="group inline-flex items-center justify-center gap-2 bg-primary px-7 py-4 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
               원서 접수하기
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
             <a
               href="tel:031-610-4840"
-              className="inline-flex items-center justify-center gap-2 border border-foreground px-7 py-4 text-base font-semibold italic text-foreground transition-colors hover:bg-foreground hover:text-background"
+              className="inline-flex items-center justify-center gap-2 border border-foreground px-7 py-4 text-base font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
             >
               입학 상담 031-610-4840
             </a>

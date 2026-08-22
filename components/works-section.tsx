@@ -30,7 +30,7 @@ function MarqueeRow({
               className="h-40 w-auto bg-card object-contain ring-1 ring-foreground sm:h-48 md:h-52"
             />
             {work.title ? (
-              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-foreground px-3 py-2 text-sm italic text-background opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-foreground px-3 py-2 text-sm text-background opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                 {work.title}
               </figcaption>
             ) : null}
@@ -46,16 +46,14 @@ export function WorksSection() {
   const rowB = works.filter((_, i) => i % 2 === 1)
 
   return (
-    <section id="works" className="relative overflow-hidden border-t border-foreground/10 py-24 md:py-32">
+    <section id="works" className="relative overflow-hidden border-t border-foreground/15 py-24 md:py-32">
       <AestheticMotif />
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
-          <div>
-            <p className="section-kicker">주요 성과</p>
-            <h2 className="font-display section-title whitespace-nowrap text-2xl text-foreground md:text-4xl">
-              한경인의 주요 성과
-            </h2>
-          </div>
+        <div>
+          <p className="section-kicker">주요 성과</p>
+          <h2 className="font-display section-title text-4xl text-foreground md:text-5xl">
+            한경인의 주요 성과
+          </h2>
         </div>
       </div>
 
