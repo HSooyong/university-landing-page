@@ -8,7 +8,7 @@ export function HeroSection() {
       <LogoParticles />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 z-[5] w-[52%] bg-gradient-to-r from-background via-background/86 to-transparent md:hidden"
+        className="pointer-events-none absolute left-0 top-0 z-[5] h-[58%] w-[72%] bg-gradient-to-r from-background via-background/90 to-transparent md:hidden"
       />
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-32 pb-16 md:px-8 md:pt-36">
         <div className="flex max-w-3xl flex-col items-start">
@@ -23,17 +23,17 @@ export function HeroSection() {
             <span className="block md:whitespace-nowrap">실용음악학전공</span>
           </h1>
 
-          <div className="mt-9 flex flex-row items-center gap-2 md:gap-3">
+          <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
             <a
               href="#apply"
-              className="group inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap bg-primary px-3.5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 md:gap-2 md:px-6 md:py-3.5 md:text-base"
+              className="group inline-flex items-center justify-center gap-2 bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
               지금 지원하기
-              <ArrowRight className="size-3.5 md:size-4 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
             <a
               href="#works"
-              className="inline-flex shrink-0 items-center justify-center whitespace-nowrap border border-foreground bg-transparent px-3.5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background md:px-6 md:py-3.5 md:text-base"
+              className="inline-flex items-center justify-center gap-2 border border-foreground bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
             >
               한경인의 주요 성과
             </a>

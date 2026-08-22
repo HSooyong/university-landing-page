@@ -101,15 +101,15 @@ export function LogoParticles() {
       const rect = wrapEl.getBoundingClientRect()
       w = rect.width
       h = rect.height
-      ox = w * (w < 720 ? 0.66 : 0.72)
-      oy = h * (w < 720 ? 0.58 : 0.52)
+      ox = w * (w < 720 ? 0.76 : 0.72)
+      oy = h * (w < 720 ? 0.66 : 0.52)
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
       canvas.width = Math.max(1, Math.floor(w * dpr))
       canvas.height = Math.max(1, Math.floor(h * dpr))
       canvas.style.width = `${w}px`
       canvas.style.height = `${h}px`
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      particles = sampleFromImage(logo, Math.min(w, h) * (w < 720 ? 0.46 : 0.58))
+      particles = sampleFromImage(logo, w < 720 ? w * 0.3 : Math.min(w, h) * 0.58)
       scatter(true)
       t0 = performance.now()
     }
@@ -181,7 +181,7 @@ export function LogoParticles() {
         const absX = ox + p.x
         const leftFade =
           w < 720
-            ? Math.min(1, Math.max(0.1, (absX - w * 0.22) / (w * 0.28)))
+            ? Math.min(1, Math.max(0.08, (absX - w * 0.48) / (w * 0.2)))
             : Math.min(1, Math.max(0.16, (absX - w * 0.08) / (w * 0.38)))
         ctx.globalAlpha = leftFade
         ctx.fillStyle = `rgb(${p.r},${p.g},${p.b})`
