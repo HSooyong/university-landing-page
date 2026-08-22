@@ -1,3 +1,4 @@
+import { AestheticMotif } from "@/components/aesthetic-motif"
 import { works, type Work } from "@/lib/works"
 import { cn } from "@/lib/utils"
 
@@ -26,10 +27,10 @@ function MarqueeRow({
             <img
               src={work.src}
               alt={work.title ?? ""}
-              className="h-40 w-auto bg-card/70 object-contain ring-1 ring-foreground/10 sm:h-48 md:h-52"
+              className="h-40 w-auto bg-card object-contain ring-1 ring-foreground sm:h-48 md:h-52"
             />
             {work.title ? (
-              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-foreground/55 px-3 py-2 text-sm text-background opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-foreground px-3 py-2 text-sm italic text-background opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                 {work.title}
               </figcaption>
             ) : null}
@@ -45,8 +46,9 @@ export function WorksSection() {
   const rowB = works.filter((_, i) => i % 2 === 1)
 
   return (
-    <section id="works" className="border-t border-foreground/10 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+    <section id="works" className="relative overflow-hidden border-t border-foreground/10 py-24 md:py-32">
+      <AestheticMotif />
+      <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
           <div>
             <p className="section-kicker">주요 성과</p>
@@ -58,7 +60,7 @@ export function WorksSection() {
       </div>
 
       <div
-        className="works-fade mt-12 flex flex-col gap-3"
+        className="relative z-10 works-fade mt-12 flex flex-col gap-3"
         aria-hidden={works.every((w) => !w.title)}
       >
         <MarqueeRow items={rowA} />

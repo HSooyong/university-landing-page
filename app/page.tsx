@@ -10,6 +10,7 @@ import { TextParticles } from "@/components/text-particles"
 export default function Page() {
   return (
     <main className="relative min-h-screen poster-wash">
+      <div className="pointer-events-none fixed inset-0 z-0 aesthetic-grid" />
       <div className="pointer-events-none fixed inset-0 z-40 grain" />
       <SiteNav />
       <HeroSection />

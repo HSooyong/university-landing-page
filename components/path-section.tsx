@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { AestheticMotif } from "@/components/aesthetic-motif"
 import { cn } from "@/lib/utils"
 
 type PathRow = {
@@ -112,8 +113,8 @@ function SpectrumRow({ row }: { row: PathRow }) {
             className={cn(
               "pointer-events-none absolute inset-y-0 w-2/5",
               row.flip
-                ? "left-0 bg-gradient-to-r from-[#0c1424] to-transparent"
-                : "right-0 bg-gradient-to-l from-[#0c1424] to-transparent",
+                ? "left-0 bg-gradient-to-r from-black to-transparent"
+                : "right-0 bg-gradient-to-l from-black to-transparent",
             )}
           />
         </figure>
@@ -127,8 +128,15 @@ function SpectrumRow({ row }: { row: PathRow }) {
             shown && "is-in",
           )}
         >
-          <p className="font-label text-xs tracking-[0.04em] text-[#e0b15a] uppercase">{row.kicker}</p>
-          <h3 className="font-label mt-3 text-[1.8rem] font-bold tracking-[0.03em] text-[#e0b15a] uppercase md:text-[2rem]">
+          <p
+            className={cn(
+              "inline-flex bg-white px-2.5 py-1 text-[11px] font-extrabold italic tracking-[0.04em] text-black uppercase",
+              row.flip && "md:ml-auto",
+            )}
+          >
+            {row.kicker}
+          </p>
+          <h3 className="font-label mt-3 text-[1.8rem] font-extrabold italic tracking-[0.03em] text-white uppercase md:text-[2rem]">
             {row.title}
             {row.titleLine2 ? (
               <>
@@ -146,7 +154,7 @@ function SpectrumRow({ row }: { row: PathRow }) {
             {row.body}
           </p>
           <div className={cn("mt-5", row.flip && "md:flex md:flex-col md:items-end")}>
-            <p className="font-label text-[11px] tracking-[0.16em] text-[#e0b15a]/80 uppercase">Career</p>
+            <p className="font-label text-[11px] tracking-[0.16em] text-white/70 uppercase">Career</p>
             <ul
               className={cn(
                 "mt-2.5 flex flex-wrap gap-2",
@@ -156,7 +164,7 @@ function SpectrumRow({ row }: { row: PathRow }) {
               {row.careers.map((job) => (
                 <li
                   key={job}
-                  className="border border-[#e0b15a]/45 bg-[#e0b15a]/10 px-3 py-1.5 text-sm font-medium tracking-wide text-[#f3d59a]"
+                  className="rounded-full border border-white/55 px-3 py-1.5 text-sm font-medium tracking-wide text-white"
                 >
                   {job}
                 </li>
@@ -173,17 +181,20 @@ export function PathSection() {
   const head = useReveal<HTMLDivElement>()
 
   return (
-    <section id="path" className="relative overflow-x-hidden bg-[#0c1424]">
-      <div className="mx-auto max-w-6xl px-5 pt-24 pb-8 text-center md:px-8 md:pt-32">
+    <section id="path" className="relative overflow-x-hidden bg-black">
+      <AestheticMotif variant="navy" />
+      <div className="relative z-10 mx-auto max-w-6xl px-5 pt-24 pb-8 text-center md:px-8 md:pt-32">
         <div ref={head.ref} className={cn("spectrum-head", head.shown && "is-in")}>
-          <p className="text-sm font-bold tracking-[0.04em] text-[#e0b15a]">교육과정</p>
+          <p className="inline-flex bg-white px-2.5 py-1 text-[13px] font-extrabold italic tracking-[0.04em] text-black">
+            교육과정
+          </p>
           <h2 className="font-display section-title text-2xl text-white md:text-4xl">
             실무를 배우는 과정, 현장으로 이어지는 길
           </h2>
         </div>
       </div>
 
-      <div className="pb-16 md:pb-24">
+      <div className="relative z-10 pb-16 md:pb-24">
         {rows.map((row) => (
           <SpectrumRow key={row.title} row={row} />
         ))}

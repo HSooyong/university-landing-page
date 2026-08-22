@@ -1,4 +1,5 @@
 import { CalendarDays, GraduationCap, CheckCircle2, ArrowUpRight } from "lucide-react"
+import { AestheticMotif } from "@/components/aesthetic-motif"
 
 function Notes({ items }: { items: string[] }) {
   return (
@@ -21,7 +22,8 @@ const notes = [
 export function AdmissionsSection() {
   return (
     <section id="admissions" className="relative border-t border-foreground/10 py-16 md:py-32">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+      <AestheticMotif />
+      <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div className="max-w-3xl">
           <p className="section-kicker">모집요강</p>
           <h2 className="font-display section-title text-4xl text-foreground md:text-5xl">
@@ -33,7 +35,7 @@ export function AdmissionsSection() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-3 md:mt-14 md:grid-cols-6 md:gap-4">
-          <div className="border border-foreground/12 bg-card/50 p-5 md:col-span-4 md:p-7">
+          <div className="border border-foreground bg-card p-5 md:col-span-4 md:p-7">
             <div className="flex items-center gap-2 text-primary">
               <CalendarDays className="size-5" />
               <span className="text-base font-semibold">주요 일정</span>
@@ -73,7 +75,7 @@ export function AdmissionsSection() {
           </div>
 
           <div className="flex flex-col gap-3 md:col-span-2">
-            <div className="border border-foreground/12 bg-card/50 p-5 md:p-7">
+            <div className="border border-foreground bg-card p-5 md:p-7">
               <div className="flex items-center gap-2 text-primary">
                 <GraduationCap className="size-5" />
                 <span className="text-base font-semibold">지원 자격 · 인원</span>
@@ -111,7 +113,7 @@ export function AdmissionsSection() {
             07 실기고사
           </h3>
 
-          <div className="mt-6 overflow-x-auto border border-foreground/15 md:mt-8">
+          <div className="mt-6 overflow-x-auto border border-foreground md:mt-8">
             <table className="w-full min-w-[52rem] border-collapse text-base font-bold leading-snug text-foreground md:text-lg">
               <thead>
                 <tr className="bg-primary text-primary-foreground">
@@ -217,7 +219,7 @@ export function AdmissionsSection() {
             </table>
           </div>
 
-          <div className="mt-4 border border-foreground/12 bg-card/50 p-5 md:p-7">
+          <div className="mt-4 border border-foreground bg-card p-5 md:p-7">
             <p className="text-lg font-bold text-primary">유의사항</p>
             <ol className="mt-4 space-y-2.5">
               {notes.map((note, i) => (

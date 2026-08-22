@@ -1,4 +1,5 @@
 import { ArrowRight, MapPin } from "lucide-react"
+import { AestheticMotif } from "@/components/aesthetic-motif"
 import { BrandMark } from "@/components/brand-mark"
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -42,7 +43,8 @@ export function CtaFooter() {
   return (
     <>
       <section id="apply" className="relative overflow-hidden border-t border-foreground/10">
-        <div className="mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-36">
+        <AestheticMotif variant="cta" />
+        <div className="relative z-10 mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-36">
           <p className="section-kicker">문의</p>
           <h2 className="font-display section-title max-w-3xl text-4xl text-foreground md:text-6xl">
             당신의 시선이 머무는 곳마다,
@@ -54,14 +56,14 @@ export function CtaFooter() {
               href="https://ipsi.hknu.ac.kr"
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center justify-center gap-2 bg-primary px-7 py-4 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              className="group inline-flex items-center justify-center gap-2 bg-primary px-7 py-4 text-base font-semibold italic text-primary-foreground transition-opacity hover:opacity-90"
             >
               원서 접수하기
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
             <a
               href="tel:031-610-4840"
-              className="inline-flex items-center justify-center gap-2 border border-foreground/25 px-7 py-4 text-base font-semibold text-foreground transition-colors hover:bg-foreground/5"
+              className="inline-flex items-center justify-center gap-2 border border-foreground px-7 py-4 text-base font-semibold italic text-foreground transition-colors hover:bg-foreground hover:text-background"
             >
               입학 상담 031-610-4840
             </a>
@@ -96,7 +98,7 @@ export function CtaFooter() {
                 href={href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 border border-foreground/15 px-3.5 py-2 text-base text-foreground/80 transition-colors hover:border-foreground/40 hover:text-foreground"
+                className="inline-flex items-center gap-2 border border-foreground px-3.5 py-2 text-base text-foreground transition-colors hover:bg-foreground hover:text-background"
               >
                 <Icon className="size-4" />
                 {label}

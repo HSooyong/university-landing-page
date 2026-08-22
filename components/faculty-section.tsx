@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { X, Mail } from "lucide-react"
+import { AestheticMotif } from "@/components/aesthetic-motif"
 
 type CreditBlock = {
   title: string
@@ -213,7 +214,8 @@ export function FacultySection() {
 
   return (
     <section id="faculty" className="relative border-t border-foreground/10 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+      <AestheticMotif />
+      <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div className="max-w-2xl">
           <p className="section-kicker">교수진</p>
           <h2 className="font-display section-title text-4xl text-foreground md:text-5xl">
@@ -232,7 +234,7 @@ export function FacultySection() {
               className="group text-left"
               aria-label={`${f.name} 교수 이력 보기`}
             >
-              <div className="overflow-hidden bg-[#c5d0dc] ring-1 ring-foreground/10">
+              <div className="overflow-hidden bg-[#c5d0dc] ring-1 ring-foreground">
                 <div className="aspect-[2/3] overflow-hidden">
                   <img
                     src={f.image}
@@ -275,13 +277,13 @@ export function FacultySection() {
           aria-labelledby="faculty-modal-title"
         >
           <div
-            className="relative flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden border border-foreground/15 bg-background duration-300 animate-in fade-in slide-in-from-bottom-4"
+            className="relative flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden border border-foreground bg-background duration-300 animate-in fade-in slide-in-from-bottom-4"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={() => setActive(null)}
-              className="absolute right-4 top-4 z-10 flex size-9 items-center justify-center border border-border bg-card text-foreground transition-colors hover:bg-secondary"
+              className="absolute right-4 top-4 z-10 flex size-9 items-center justify-center border border-foreground bg-card text-foreground transition-colors hover:bg-foreground hover:text-background"
               aria-label="닫기"
             >
               <X className="size-4" />
@@ -296,16 +298,16 @@ export function FacultySection() {
                 <h3 id="faculty-modal-title" className="font-display mt-3 text-3xl text-foreground">
                   {active.name}
                 </h3>
-                <div className="mt-4 inline-flex items-center gap-3 border border-primary/20 bg-primary/5 px-3 py-2">
-                  <span className="font-label text-[11px] tracking-[0.16em] text-primary uppercase">{active.focusEn}</span>
-                  <span className="h-3 w-px bg-primary/30" aria-hidden />
-                  <span className="text-base font-semibold text-foreground">{active.focusKo}</span>
+                <div className="mt-4 inline-flex items-center gap-3 border border-foreground bg-foreground px-3 py-2 text-background">
+                  <span className="font-label text-[11px] tracking-[0.16em] text-background uppercase">{active.focusEn}</span>
+                  <span className="h-3 w-px bg-background/40" aria-hidden />
+                  <span className="text-base font-semibold text-background">{active.focusKo}</span>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {active.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="border border-primary/25 bg-primary/5 px-2.5 py-1 font-label text-[11px] tracking-[0.12em] text-primary uppercase"
+                      className="rounded-full border border-foreground px-2.5 py-1 font-label text-[11px] tracking-[0.12em] text-foreground uppercase"
                     >
                       {tag}
                     </span>

@@ -51,39 +51,39 @@
 
 :root {
   color-scheme: light;
-  --background: oklch(0.9 0.055 48);
-  --foreground: oklch(0.2 0.04 260);
-  --card: oklch(0.97 0.02 70 / 0.72);
-  --card-foreground: oklch(0.2 0.04 260);
-  --popover: oklch(0.97 0.015 70);
-  --popover-foreground: oklch(0.2 0.04 260);
-  --primary: oklch(0.3 0.09 255);
-  --primary-foreground: oklch(0.97 0.02 80);
-  --teal: oklch(0.58 0.11 195);
-  --secondary: oklch(0.93 0.045 42);
-  --secondary-foreground: oklch(0.24 0.04 255);
-  --muted: oklch(0.92 0.04 50);
-  --muted-foreground: oklch(0.38 0.04 255);
-  --accent: oklch(0.3 0.09 255);
-  --accent-foreground: oklch(0.97 0.02 80);
+  --background: oklch(0.985 0.002 90);
+  --foreground: oklch(0.13 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.13 0 0);
+  --primary: oklch(0.13 0 0);
+  --primary-foreground: oklch(0.99 0 0);
+  --teal: oklch(0.72 0.1 210);
+  --secondary: oklch(0.96 0.005 90);
+  --secondary-foreground: oklch(0.13 0 0);
+  --muted: oklch(0.96 0.004 90);
+  --muted-foreground: oklch(0.42 0 0);
+  --accent: oklch(0.13 0 0);
+  --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.55 0.2 25);
-  --border: oklch(0.78 0.05 48);
-  --input: oklch(0.78 0.05 48);
-  --ring: oklch(0.3 0.09 255);
-  --chart-1: oklch(0.3 0.09 255);
-  --chart-2: oklch(0.58 0.11 195);
-  --chart-3: oklch(0.72 0.12 40);
-  --chart-4: oklch(0.7 0.1 15);
-  --chart-5: oklch(0.85 0.06 70);
-  --radius: 0.55rem;
-  --sidebar: oklch(0.93 0.045 42);
-  --sidebar-foreground: oklch(0.2 0.04 260);
-  --sidebar-primary: oklch(0.3 0.09 255);
-  --sidebar-primary-foreground: oklch(0.97 0.02 80);
-  --sidebar-accent: oklch(0.9 0.05 48);
-  --sidebar-accent-foreground: oklch(0.24 0.04 255);
-  --sidebar-border: oklch(0.78 0.05 48);
-  --sidebar-ring: oklch(0.3 0.09 255);
+  --border: oklch(0.13 0 0 / 0.18);
+  --input: oklch(0.13 0 0 / 0.18);
+  --ring: oklch(0.13 0 0);
+  --chart-1: oklch(0.13 0 0);
+  --chart-2: oklch(0.72 0.1 210);
+  --chart-3: oklch(0.78 0.12 330);
+  --chart-4: oklch(0.8 0.1 150);
+  --chart-5: oklch(0.85 0.04 90);
+  --radius: 0.15rem;
+  --sidebar: oklch(0.97 0.004 90);
+  --sidebar-foreground: oklch(0.13 0 0);
+  --sidebar-primary: oklch(0.13 0 0);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.95 0.004 90);
+  --sidebar-accent-foreground: oklch(0.13 0 0);
+  --sidebar-border: oklch(0.13 0 0 / 0.16);
+  --sidebar-ring: oklch(0.13 0 0);
 }
 
 @layer base {
@@ -100,7 +100,8 @@
 
 @utility font-display {
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 800;
+  font-style: italic;
   letter-spacing: -0.03em;
   line-height: 1.25;
 }
@@ -113,35 +114,45 @@
 }
 
 @utility section-kicker {
+  display: inline-flex;
+  align-items: center;
+  background: var(--foreground);
+  padding: 0.28rem 0.7rem;
   font-family: var(--font-sans);
-  font-size: 0.9375rem;
-  font-weight: 700;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  font-style: italic;
   letter-spacing: 0.04em;
   line-height: 1.25;
-  color: var(--primary);
+  color: var(--background);
 }
 
 @utility section-title {
   margin-top: 0.75rem;
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 800;
+  font-style: italic;
   letter-spacing: -0.03em;
   line-height: 1.25;
 }
 
 @utility poster-wash {
-  background:
-    radial-gradient(ellipse 90% 70% at 8% 18%, oklch(0.86 0.11 35), transparent 56%),
-    radial-gradient(ellipse 70% 55% at 88% 12%, oklch(0.8 0.13 12), transparent 52%),
-    radial-gradient(ellipse 80% 70% at 72% 92%, oklch(0.88 0.08 72), transparent 58%),
-    oklch(0.88 0.08 46);
+  background: oklch(0.985 0.002 90);
+}
+
+@utility aesthetic-grid {
+  background-image:
+    linear-gradient(to right, rgb(0 0 0 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(0 0 0 / 0.045) 1px, transparent 1px),
+    repeating-conic-gradient(from 0deg at 50% 42%, transparent 0deg, transparent 14.6deg, rgb(0 0 0 / 0.028) 14.6deg, rgb(0 0 0 / 0.028) 15deg);
+  background-size: 52px 52px, 52px 52px, 100% 100%;
 }
 
 @utility grain {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   background-size: 180px 180px;
   mix-blend-mode: multiply;
-  opacity: 0.28;
+  opacity: 0.1;
 }
 
 @keyframes marquee-left {
