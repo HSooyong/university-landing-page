@@ -24,7 +24,7 @@ export function AdmissionsSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div>
           <p className="section-kicker">모집요강</p>
-          <h2 className="font-display section-title text-4xl text-foreground md:text-5xl">
+          <h2 className="font-display section-title text-[1.75rem] text-foreground md:text-5xl">
             2027학년도 수시 모집요강
           </h2>
           <p className="mt-3 text-base leading-relaxed text-muted-foreground md:mt-4 md:text-lg">
@@ -111,7 +111,8 @@ export function AdmissionsSection() {
             07 실기고사
           </h3>
 
-          <div className="mt-6 overflow-x-auto border border-foreground md:mt-8">
+          <p className="mt-5 text-sm text-muted-foreground md:hidden">표를 옆으로 밀어 전체 칸을 볼 수 있습니다.</p>
+          <div className="mt-2 overflow-x-auto border border-foreground md:mt-8">
             <table className="w-full min-w-[52rem] border-collapse text-base font-bold leading-snug text-foreground md:text-lg">
               <thead>
                 <tr className="bg-primary text-primary-foreground">

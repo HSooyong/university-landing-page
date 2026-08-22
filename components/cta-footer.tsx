@@ -44,7 +44,7 @@ export function CtaFooter() {
       <section id="apply" className="relative overflow-hidden border-t border-foreground/15">
         <div className="relative z-10 mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-36">
           <p className="section-kicker">문의</p>
-          <h2 className="font-display section-title max-w-3xl text-4xl text-foreground md:text-6xl">
+          <h2 className="font-display section-title max-w-3xl text-[1.75rem] text-foreground md:text-6xl">
             당신의 시선이 머무는 곳마다,
             <br />
             새로운 음악이 흐르도록

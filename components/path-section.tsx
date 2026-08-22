@@ -171,7 +171,7 @@ export function PathSection() {
           <p className="inline-flex bg-white px-2.5 py-1 text-[13px] font-extrabold tracking-[0.04em] text-black">
             교육과정
           </p>
-          <h2 className="font-display section-title text-4xl text-white md:text-5xl">
+          <h2 className="font-display section-title text-[1.75rem] text-white md:text-5xl">
             실무를 배우는 과정, 현장으로 이어지는 길
           </h2>
         </div>

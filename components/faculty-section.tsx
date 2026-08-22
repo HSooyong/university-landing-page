@@ -216,7 +216,7 @@ export function FacultySection() {
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div>
           <p className="section-kicker">교수진</p>
-          <h2 className="font-display section-title text-4xl text-foreground md:text-5xl">
+          <h2 className="font-display section-title text-[1.75rem] text-foreground md:text-5xl">
             현장을 아는 교수진이
             <br />
             당신의 꿈을 설계합니다

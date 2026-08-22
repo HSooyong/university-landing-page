@@ -49,7 +49,7 @@ export function WorksSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div>
           <p className="section-kicker">주요 성과</p>
-          <h2 className="font-display section-title text-4xl text-foreground md:text-5xl">
+          <h2 className="font-display section-title text-[1.75rem] text-foreground md:text-5xl">
             한경인의 주요 성과
           </h2>
         </div>
