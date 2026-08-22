@@ -45,9 +45,9 @@ export function CtaFooter() {
         <div className="mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-36">
           <p className="section-kicker">문의</p>
           <h2 className="font-display section-title max-w-3xl text-4xl text-foreground md:text-6xl">
-            당신의 소리를
+            당신의 시선이 머무는 곳마다,
             <br />
-            세상에 들려줄 시간
+            새로운 음악이 흐르도록
           </h2>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
