@@ -246,17 +246,19 @@ export function FacultySection() {
                 <h3 className="mt-1 text-xl font-bold text-foreground">{f.name}</h3>
                 <div className="mt-3 flex items-stretch gap-3">
                   <span className="w-px bg-primary/50" aria-hidden />
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="font-label text-[11px] tracking-[0.16em] text-primary uppercase">{f.focusEn}</p>
                     <p className="mt-0.5 text-base font-semibold tracking-tight text-foreground">{f.focusKo}</p>
-                    <p className="mt-0.5 font-label text-[11px] tracking-[0.14em] text-muted-foreground uppercase">
-                      Professor
-                    </p>
+                    <div className="mt-0.5 flex items-center justify-between gap-3">
+                      <p className="font-label text-[11px] tracking-[0.14em] text-muted-foreground uppercase">
+                        Professor
+                      </p>
+                      <p className="font-label text-[10px] tracking-[0.2em] text-primary/55 uppercase transition-colors duration-200 group-hover:text-primary">
+                        Click
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <p className="font-label mt-3 text-[10px] tracking-[0.2em] text-primary/55 uppercase transition-colors duration-200 group-hover:text-primary">
-                  Click
-                </p>
               </div>
             </button>
           ))}
