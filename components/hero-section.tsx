@@ -23,17 +23,17 @@ export function HeroSection() {
             <span className="block md:whitespace-nowrap">실용음악학전공</span>
           </h1>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-9 flex flex-row items-center gap-2 md:gap-3">
             <a
               href="#apply"
-              className="group inline-flex items-center justify-center gap-2 bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              className="group inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap bg-primary px-3.5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 md:gap-2 md:px-6 md:py-3.5 md:text-base"
             >
               지금 지원하기
-              <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight className="size-3.5 md:size-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
             <a
               href="#works"
-              className="inline-flex items-center justify-center gap-2 border border-foreground bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
+              className="inline-flex shrink-0 items-center justify-center whitespace-nowrap border border-foreground bg-transparent px-3.5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background md:px-6 md:py-3.5 md:text-base"
             >
               한경인의 주요 성과
             </a>
